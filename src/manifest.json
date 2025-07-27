@@ -1,0 +1,10 @@
+{
+  "name": "Resume of Arun Donthi",
+  "short_name": "Resume",
+  "description": "This is a complete page of my work experience",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000"
+  
+}

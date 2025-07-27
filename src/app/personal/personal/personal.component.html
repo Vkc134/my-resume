@@ -1,0 +1,136 @@
+<div class="personal-info-container">
+  <div class="main-personal-info">
+    <div class="left-side">
+      <div class="left-side-header">
+        <div class="button-mac">
+          <img src="/assets/images/close-icon.png" class="button-icon">
+        </div>
+        <div class="button-mac yellow-button">
+          <img src="/assets/images/subtract-icon.png" class="button-icon">
+        </div>
+        <div class="button-mac green-button">
+          <img src="/assets/images/full-screen-icon.png" class="button-icon" (click)="fulllscreen()">
+        </div>
+      </div>
+      <div class="accordion">
+        <div class="accordion-item" *ngFor="let item of sideList">
+          <div class="accordion-header" (click)="toggleAccordion(item)">
+            <p class="title-beauty">{{ item.title }}</p>
+          </div>
+          <div class="accordion-content" [@accordionAnimation]="item.open ? 'open' : 'closed'">
+            <ng-container *ngFor="let sub of item.content">
+              <a class="subtitle-beauty" (click)="goTo(sub.link, item.link)">
+                <img *ngIf="sub.icon" [src]="'assets/images/side-icon/' + sub.icon" class="subitem-icons">
+                <p class="subitem-title">{{ sub.title }}</p>
+              </a>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="right-side">
+      <div class="header-right-side">
+        <!-- Optional profile image -->
+<img src="/assets/images/kalya-photo-vk.jpg" alt="Kalyan Vajjala Profile" class="my-image">
+      </div>
+
+      <div class="right-side-main">
+        <!-- About Section -->
+        <div id="about" class="about-container">
+          <div>
+            <h1>Kalyan Vajjala</h1>
+            <p class="about-text">
+              Experienced Full Stack Developer with 1.5 years of experience in Angular, React, Node.js, Spring Boot, and SQL Server.
+              Adept at automation, scalable UI development, and back-end optimization in Agile environments.
+              Passionate about clean code, learning modern frameworks, and delivering reliable digital solutions.
+            </p>
+            <a target="_blank" href="https://drive.google.com/file/d/1_nZhatjBtXfC4_yClqxDz0btQDuD_fVg/view?usp=drive_link">
+              <button class="content-button">Download Resume</button>
+            </a>
+          </div>
+          <img src="/assets/images/front-end-developer.png" class="about-image">
+        </div>
+
+        <!-- Skills Section -->
+        <div id="skills" class="box-container">
+          <h4 class="box-headr">My Skills</h4>
+          <div class="main-skills">
+            <div class="skill-container" *ngFor="let item of skills">
+              <div class="skill-detail">
+                <img [src]="'/assets/images/skill-icons/' + item.icon" class="items-icon">
+                <p class="item-name">{{ item.name }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Work Experience -->
+        <div id="jobs" class="box-container">
+          <h4 class="box-headr">My Jobs</h4>
+          <div class="main-jobs">
+            <!-- Intern at Srifin -->
+            <div class="job-container" (click)="goTo('https://srifin.in/', true)">
+              <div class="job-detail">
+                <div class="job-title">
+                  <p class="item-name">Srifin Credit Pvt Ltd</p>
+                </div>
+                <p>Aug 2024 – Mar 2025</p>
+              </div>
+              <p class="item-detail">Intern – Automation Developer</p>
+              <li>Developed a reporting system aggregating multiple sources – 50% efficiency gain</li>
+              <li>Automated purchase order workflow, reducing manual time by 40%</li>
+              <li>Migrated onboarding from Perl to Node.js with 30% better performance</li>
+            </div>
+
+            <!-- Mphasis Experience -->
+            <div class="job-container" (click)="goTo('https://www.mphasis.com/', true)">
+              <div class="job-detail">
+                <div class="job-title">
+                  <p class="item-name">Mphasis Limited</p>
+                </div>
+                <p>Sep 2023 – Mar 2024</p>
+              </div>
+              <p class="item-detail">Associate Software Engineer</p>
+              <li>Built Angular admin dashboard with improved error handling (40% better)</li>
+              <li>Integrated SQL-based services to cut processing time by 30%</li>
+              <li>Enhanced database speed with indexing and optimized joins (50% boost)</li>
+              <li>Streamlined CI/CD pipelines with Git</li>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education Section -->
+        <div id="uni" class="box-container">
+          <h4 class="box-headr">My Education</h4>
+          <div class="main-uni">
+            <div class="uni-container">
+              <div class="uni-detail">
+                <div class="uni-title">
+                  <div class="uni-items">
+                    <p class="item-name">B.Tech in Electronics and Communication Engineering</p>
+                    <p class="item-uni">Vaagdevi College of Engineering, Warangal</p>
+                  </div>
+                </div>
+                <p class="uni-date">2019 – 2022</p>
+              </div>
+            </div>
+
+            <div class="uni-container">
+              <div class="uni-detail">
+                <div class="uni-title">
+                  <div class="uni-items">
+                    <p class="item-name">Diploma in Electronics and Communication Engineering</p>
+                    <p class="item-uni">VMR Polytechnic, Warangal</p>
+                  </div>
+                </div>
+                <p class="uni-date">2016 – 2019</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
